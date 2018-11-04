@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2018 at 03:04 AM
+-- Generation Time: Nov 04, 2018 at 03:21 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.9
 
@@ -52,12 +52,15 @@ CREATE TABLE `civilians` (
   `name` mediumtext NOT NULL,
   `dob` mediumtext NOT NULL,
   `address` mediumtext NOT NULL,
-  `markers` mediumtext NOT NULL,
-  `driving_license` varchar(255) NOT NULL,
-  `license_status` varchar(255) NOT NULL,
-  `license_type` varchar(255) NOT NULL,
-  `license_points` varchar(255) NOT NULL
+  `markers` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `civilians`
+--
+
+INSERT INTO `civilians` (`civid`, `name`, `dob`, `address`, `markers`) VALUES
+(1, 'Test', '2002-05-29', 'Test', '');
 
 -- --------------------------------------------------------
 
@@ -76,18 +79,6 @@ CREATE TABLE `civilian_notes` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `license_types`
---
-
-CREATE TABLE `license_types` (
-  `id` bigint(20) NOT NULL,
-  `acronym` mediumtext NOT NULL,
-  `name` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `logs`
 --
 
@@ -100,6 +91,16 @@ CREATE TABLE `logs` (
   `visible` int(1) NOT NULL DEFAULT '1' COMMENT '1 = Visible, 0 = Hidden'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `logs`
+--
+
+INSERT INTO `logs` (`logid`, `user`, `content`, `category`, `dateline`, `visible`) VALUES
+(1, '1', 'Has created a new session ::1.', 'Session', 1541300500, 1),
+(2, '1', 'Has created a new session ::1.', 'Session', 1541300705, 1),
+(3, '1', 'Has created a new session ::1.', 'Session', 1541341209, 1),
+(4, '1', 'Has created the civilian Test', 'Civilian Management', 1541341222, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -111,6 +112,25 @@ CREATE TABLE `markers` (
   `acronym` mediumtext NOT NULL,
   `name` mediumtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `markers`
+--
+
+INSERT INTO `markers` (`id`, `acronym`, `name`) VALUES
+(1, 'DR', 'Drugs'),
+(2, 'WE', 'Weapons'),
+(3, 'VI', 'Violence'),
+(4, 'FI', 'Firearms'),
+(5, 'CL', 'Concealed'),
+(6, 'SH', 'Self Harm'),
+(7, 'MH', 'Mental Health'),
+(8, 'CO', 'Contagious'),
+(9, 'SU', 'Suicide'),
+(10, 'ES', 'Escaper'),
+(11, 'IM', 'Male Impersonator'),
+(12, 'IF', 'Female Impersonator'),
+(13, 'XP', 'Explosives');
 
 -- --------------------------------------------------------
 
@@ -125,6 +145,14 @@ CREATE TABLE `mdt_sessions` (
   `ip` varchar(255) NOT NULL,
   `timestamp` mediumint(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mdt_sessions`
+--
+
+INSERT INTO `mdt_sessions` (`id`, `session_id`, `user_id`, `ip`, `timestamp`) VALUES
+(2, 'f5aos3n8mpf9830rosq59ctp8k', 1, '::1', 8388607),
+(3, 'tb3l8sk7jeskm08nagbgggpms9', 1, '::1', 8388607);
 
 -- --------------------------------------------------------
 
@@ -352,12 +380,6 @@ ALTER TABLE `civilian_notes`
   ADD PRIMARY KEY (`noteid`);
 
 --
--- Indexes for table `license_types`
---
-ALTER TABLE `license_types`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `logs`
 --
 ALTER TABLE `logs`
@@ -443,7 +465,7 @@ ALTER TABLE `calls`
 -- AUTO_INCREMENT for table `civilians`
 --
 ALTER TABLE `civilians`
-  MODIFY `civid` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `civid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `civilian_notes`
@@ -452,28 +474,22 @@ ALTER TABLE `civilian_notes`
   MODIFY `noteid` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `license_types`
---
-ALTER TABLE `license_types`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `logid` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `logid` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `markers`
 --
 ALTER TABLE `markers`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `mdt_sessions`
 --
 ALTER TABLE `mdt_sessions`
-  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` mediumint(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mdt_users`
