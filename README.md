@@ -1,3 +1,5 @@
+------------
+
 Steps to installing:
 
 1) Upload all files.
@@ -13,3 +15,5 @@ Default Login Information:
 Collar: 1234
 
 Password: changeme
+
+------------
