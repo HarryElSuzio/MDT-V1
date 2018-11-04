@@ -6,7 +6,13 @@
     */
 ?>
 <?php
-$con = mysqli_connect("localhost","root","","wmrpc_new");
+
+$host = 'localhost';
+$name = 'root';
+$password = 'Your Password';
+$dbname = 'Your db name';
+
+$con = mysqli_connect($host, $name, $password, $dbname);
 
 // Check connection
 if (mysqli_connect_errno())
