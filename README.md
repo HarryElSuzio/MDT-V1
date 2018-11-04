@@ -6,7 +6,10 @@ Steps to installing:
 
 3) Enjoy!
 
+------------
+
 Default Login Information:
 
 Collar: 0
+
 Password: changeme
