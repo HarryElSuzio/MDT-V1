@@ -139,7 +139,7 @@ CREATE TABLE `mdt_users` (
   `email` mediumtext NOT NULL,
   `steamid` longtext NOT NULL,
   `password` mediumtext NOT NULL,
-  `collar` int(5) NOT NULL,
+  `collar` mediumtext NOT NULL,
   `groups` mediumtext NOT NULL,
   `joindate` bigint(20) NOT NULL,
   `theme` int(11) NOT NULL DEFAULT '1',
@@ -151,7 +151,7 @@ CREATE TABLE `mdt_users` (
 --
 
 INSERT INTO `mdt_users` (`userid`, `first_name`, `surname`, `email`, `steamid`, `password`, `collar`, `groups`, `joindate`, `theme`, `last_ip`) VALUES
-(1, 'Admin', 'Account', 'admin@example.com', '', '$2y$10$PY.e5cYH9iYGuf92Q5c7wuUZ8A4SUxzrQ1gchrZze7TgbGkfOK40a', 0, '14,', 1530222515, 2, '::1');
+(1, 'Admin', 'Account', 'admin@example.com', '', '$2y$10$PY.e5cYH9iYGuf92Q5c7wuUZ8A4SUxzrQ1gchrZze7TgbGkfOK40a', '1234', '14,', 1530222515, 2, '::1');
 
 -- --------------------------------------------------------
 

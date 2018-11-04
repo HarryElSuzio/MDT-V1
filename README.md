@@ -10,6 +10,6 @@ Steps to installing:
 
 Default Login Information:
 
-Collar: 0
+Collar: 1234
 
 Password: changeme
