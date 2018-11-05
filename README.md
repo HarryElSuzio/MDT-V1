@@ -12,8 +12,8 @@
 
 ## Default Login Information:
 
-Collar: 1234
+**Collar:** 1234
 
-Password: changeme
+**Password:** changeme
 
 ------------
