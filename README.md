@@ -1,6 +1,6 @@
 ------------
 
-Steps to installing:
+## Steps to installing:
 
 1) Upload all files.
 
@@ -10,7 +10,7 @@ Steps to installing:
 
 ------------
 
-Default Login Information:
+## Default Login Information:
 
 Collar: 1234
 
