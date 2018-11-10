@@ -143,7 +143,7 @@ CREATE TABLE `mdt_sessions` (
   `session_id` mediumtext NOT NULL,
   `user_id` mediumint(9) NOT NULL,
   `ip` varchar(255) NOT NULL,
-  `timestamp` mediumint(9) NOT NULL
+  `timestamp` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
